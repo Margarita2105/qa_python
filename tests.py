@@ -98,5 +98,27 @@ class TestBooksCollector:
 
         assert len(collector.get_list_of_favorites_books()) == 1
 
+    def test_get_books_genre_add_one_book(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость')
+
+        assert len(collector.get_books_genre()) == 1
+
+    @pytest.mark.parametrize('name, genre',
+                             [['Черновик', 'Фантастика'], ['Гордость', 'Детективы'], ['Недотепа', 'Мультфильмы'],
+                              ['Кошмар', 'Ужасы'], ['Смешно', 'Комедии']])
+    def test_get_book_genre_name_corresponds_genre(self, name, genre):
+        collector = BooksCollector()
+        collector.add_new_book(name)
+        collector.set_book_genre(name, genre)
+
+        assert collector.get_book_genre(name) == genre
+
+    def test_get_list_of_favorites_books_favorites_name_in_list(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость')
+        collector.add_book_in_favorites('Гордость')
+
+        assert len(collector.get_list_of_favorites_books()) == 1
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector

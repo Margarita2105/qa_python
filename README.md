@@ -20,3 +20,9 @@ test_add_book_in_favorites_only_favorites_book_in_list - Проверяет, ч�
 
 
 test_delete_book_from_favorites_delete_one_book - Проверяет, что при удалении книги из избранного, книга из избранного удаляется. Используемые методы - add_new_book, add_book_in_favorites, delete_book_from_favorites и get_list_of_favorites_books
+
+test_get_books_genre_add_one_book - Проверяет добавление одной книги в словарь books_rating. Используемые методы - add_new_book и get_books_genre
+
+test_get_book_genre_name_corresponds_genre - Проверяет, что выводится жанр книги по её имени. Используемые методы - add_new_book, set_book_genre и get_book_genre
+
+test_get_list_of_favorites_books_favorites_name_in_list - Проверяет, что возвращаются книги, добавленные в избранное. Используемые методы - add_new_book, add_book_in_favorites и get_list_of_favorites_books
